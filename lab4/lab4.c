@@ -6,15 +6,16 @@
 
 double series(double x, double eps)
 {
-    double ai = x;
-    double s = fabs(ai);
-    int k = 1;
-    while (fabs(ai) >= eps)
+    double ak = x;
+    double s = fabs(ak);
+    int k = 0;
+    while (fabs(ak) >= eps)
     {
-        ai *= (-pow(x, 2) * (2 * k - 1)) / (2 * pow(k, 2) + k);
-        s += ai;
+        ak *= (-pow(x, 2) * (2 * k - 1)) / (2 * pow(k, 2) + k);
+        s += ak;
         k++;
     }
+
     return s;
 }
 
