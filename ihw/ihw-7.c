@@ -4,8 +4,8 @@
 #include <limits.h>
 
 int randint(int maxnum) {
-    return rand() % maxnum - maxnum / 2;
-    //return rand() % (maxnum + 1 - 0) + 0;
+    //return rand() % maxnum - maxnum / 2;
+    return rand() % (maxnum + 1 - 1) + 1;
 }
 
 int main() {
