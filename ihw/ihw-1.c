@@ -26,20 +26,20 @@ bool isPrime(int n) {
 }
 
 int main() {
-    int array_quantity;
+    int array_size;
     printf("Введите количество элементов массива: ");
-    scanf("%d", &array_quantity);
+    scanf("%d", &array_size);
 
     //создание и наполнение массива числами
-    int i, numbers[array_quantity];
+    int i, numbers[array_size];
     srand(time(0)); //сидируем генератор текущим временем
-    for (i = 0; i < array_quantity; i++) {
+    for (i = 0; i < array_size; i++) {
         numbers[i] = rand() % (99 + 1 - 2) + 2;
     }
 
     //проверка каждого элемента массива на простоту + счётчик
     int elem, counter;
-    for (elem = 0; elem < array_quantity; elem++) {
+    for (elem = 0; elem < array_size; elem++) {
         if (isPrime(numbers[elem])){
             counter++;
         }

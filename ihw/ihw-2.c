@@ -1,23 +1,85 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <string.h>
+#include <unistd.h>
 #include <time.h>
 
+
+int randint(int maxnum) {
+    return rand() % (maxnum + 1 - 0) + 0;
+}
+
+
+bool isEven(int num) {
+    if (num % 2 == 0)
+    {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+
+int setofnumbers(int row_length) {
+    int number, current_summ = 0, saved_summ = 0, zeros_counter = 0;
+    bool zeroFound;
+    for (int i = 1; i <= row_length; i++) {
+        number = randint(15);
+        printf("\n%d", number);
+        if (number == 0 && zeroFound) {
+            zeros_counter++;
+            saved_summ = current_summ;
+            current_summ = 0;
+            continue;
+        }
+        else if (number == 0 && !zeroFound) {
+            zeroFound = true;
+            zeros_counter++;
+            continue;
+        }
+        if (zeroFound) {
+            current_summ += number;
+        }
+    }
+    if (zeros_counter < 2) {
+        return -1;
+    }
+    else {
+        return saved_summ;
+    }
+}
+
+
 int main() {
-    srand(time(0)); //сразу сидируем генератор
-    
-    int n;
-    printf("Введите число n: ");
-    scanf("%d", &n);
+    int row_length;
+    int number;
+    int current_summ;
+    int saved_summ = 0;
+    int zeros_counter;
+    bool zeroFound = false;
 
-    char numbers[] = "10,0,32,54,65,43,0,23,43"; //пока пусть будет заданный набор
+    printf("Введите (минимальную) длину ряда: ");
+    scanf("%d", &row_length);
 
-    int num;
-    for (int i = 0; i < n; i++) {
-        num = rand() % (99 + 1 - 1) + 1;
-        
+    while (row_length<=0) {
+        printf("Число должно быть больше нуля. Введите число снова: ");
+        scanf("%d", &row_length);
     }
 
+    srand(time(0));
+
+    printf("Вывод сгенерированных чисел:\n");
+    int result = setofnumbers(row_length);
+    if (result == -1) {
+        while (result == -1) {
+            printf("\n\nВ наборе чисел не сгенерировалось хотя бы два нуля.");
+            printf("\nИдёт повторная генерация набора...");
+            sleep(1);
+            result = setofnumbers(row_length);
+        }
+    }
+    printf("\n\n========================================================\n");
+    printf("Сумма чисел, расположенная между двумя последними нулями = %d", result);
     return 0;
 }
