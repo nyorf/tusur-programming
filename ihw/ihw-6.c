@@ -1,13 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define MAX_SIZE 100
+#define MAX_SIZE 34
 
 int main() {
     int array_size, negatives_counter = 0;
     
     printf("Введите размер массива (значение N): ");
     scanf("%d", &array_size);
+    
+    if (array_size > MAX_SIZE) {
+        while (array_size > MAX_SIZE) {
+            printf("\nЗначение не может быть больше %d или меньше 0. Введите значение [0 < N <= 50]:", MAX_SIZE);
+            scanf("%d", &array_size);
+        }
+    }
 
     srand(time(0));
 
