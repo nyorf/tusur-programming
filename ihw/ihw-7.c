@@ -19,14 +19,29 @@ int main() {
     
     int matrix[m][n];
 
-    srand(time(0));
+    int check;
+    printf("Выберите способ заполнения матрицы:\n[1] - вручную\n[2] - рандомными числами\n");
+    printf("Ваш выбор: ");
+    scanf("%d", &check);
+    switch (check) {
+        case 1:
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                    printf("\tВведите элемент массива matrix[%d][%d]: ",i + 1,j + 1 );
+                    scanf("%d", &matrix[i][j]);
+                }
+                printf("\n");
+            }
+        case 2:
+            srand(time(0));
 
-    for (int i = 0; i < m; i++) {
-        for (int j = 0; j < n; j++) {
-            matrix[i][j] = randint(10);
-            printf("%d\t", matrix[i][j]);
-        }
-        printf("\n");
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                    matrix[i][j] = randint(10);
+                    printf("%d\t", matrix[i][j]);
+                }
+                printf("\n");
+            }
     }
     
     int current_row[n];
@@ -56,6 +71,12 @@ int main() {
             min_num = 0;
         }
     }
-    printf("\nМинимальный элемент среди упорядоченных строк = %d", min_num);
+    
+    if (min_num == 0) {
+        printf("\nУпорядоченные строки в матрице отсутствуют. (%d)", min_num);
+    }
+    else {
+        printf("\nМинимальный элемент среди упорядоченных строк = %d", min_num);
+    }
     return 0;
 }
