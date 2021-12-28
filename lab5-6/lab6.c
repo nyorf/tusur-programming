@@ -18,10 +18,10 @@ int main() {
 
     int** matrix;
 
-    matrix=(int**)malloc(n*sizeof(int*));
+    matrix = (int**)malloc(n*sizeof(int*));
 
     for (int i = 0; i < n; i++) {
-        matrix[i]=(int*)malloc(n*sizeof(int));
+        matrix[i] = (int*)malloc(n*sizeof(int));
     }
 
     printf("\nГенерация и вывод матрицы:\n");
