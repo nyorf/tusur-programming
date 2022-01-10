@@ -12,7 +12,7 @@ int randint(int maxnum) {
 int main() {
     setlocale(LC_ALL, "Rus");
     
-    int m, n;
+    int n;
     int check;
 
     printf("Выберите способ заполнения матрицы:\n[1] - вручную\n[2] - рандомными числами\n[3] - определённая заранее матрица\n");
@@ -60,6 +60,14 @@ int main() {
         matrix[1][0] = 4; matrix[1][1] = 5; matrix[1][2] = 6; matrix[1][3] = 4;
         matrix[2][0] = 7; matrix[2][1] = 8; matrix[2][2] = 9; matrix[2][3] = 1;
         matrix[3][0] = 7; matrix[3][1] = 8; matrix[3][2] = 9; matrix[3][3] = 6;
+    }
+
+    printf("\nВывод матрицы:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d\t", matrix[i][j]);
+        }
+        printf("\n");
     }
 
     int column_summ;
