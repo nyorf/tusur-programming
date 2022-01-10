@@ -37,7 +37,7 @@ int main() {
 
     arr = (int**)malloc(m*sizeof(int*));
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < m; i++) {
         arr[i] = (int*)malloc(n*sizeof(int));
     }
 
@@ -88,6 +88,9 @@ int main() {
     }
 
     printf("Кол-во нулевых столбцов = %d", count);
+    for (int i = 0; i < m; i++) {
+        free(arr[i]);
+    }
     free(arr);
 
     return 0;
