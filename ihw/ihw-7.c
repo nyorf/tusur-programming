@@ -32,6 +32,7 @@ int main() {
                 }
                 printf("\n");
             }
+            break;
         case 2:
             srand(time(0));
 
@@ -42,6 +43,7 @@ int main() {
                 }
                 printf("\n");
             }
+            break;
     }
     
     int current_row[n];
