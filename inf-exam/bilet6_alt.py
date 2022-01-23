@@ -1,10 +1,12 @@
 # Написать алгоритм на любом языке программирования для расчета синуса суммы двух углов, если синус меньше 0 то рассчитать косинус первого угла, если больше то косинус второго. 
 
+# будет работать ТОЛЬКО если стоит numpy -- pip install numpy (или pip3 install numpy)
 from math import sin, cos, radians, isclose
+from numpy import isclose as isclose_np
 
 
 def zero_check(number):
-    if isclose(0.0, number, rel_tol=1e-05, abs_tol=1e-08):
+    if isclose_np(0.0, number):
         return 0
     else:
         return number
