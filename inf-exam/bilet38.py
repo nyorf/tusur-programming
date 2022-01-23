@@ -1,5 +1,5 @@
 def isprime(number):
-    if number == 1:
+    if number == 1 or number == 0:
         return False
 
     for n in range(2, int(number ** 1/2) + 1):
@@ -9,9 +9,9 @@ def isprime(number):
 
 
 if __name__ == "__main__":
-    summ = 0
+    result = 1
     for number in range(21):
         if isprime(number):
-            summ += number
+            result *= number
     
-    print("Сумма простых чисел от 0 до 20 =", summ)
+    print("Произведение простых чисел от 0 до 20 =", result)
