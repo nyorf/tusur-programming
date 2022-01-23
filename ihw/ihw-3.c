@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-//#include <stdbool.h>
 #include <unistd.h>
 #include <time.h>
+#include <locale.h>
 
 
 int randint(int maxnum) {
@@ -13,7 +13,7 @@ int rowOperations(int row_count, int row_length) {
     int number, saved_count = 0;
     //printf("\n\nВывод сгенерированных чисел для %d набора:\n\n", row_count);
     for (int i = 1; i <= row_length; i++) {
-        number = randint(15);
+        number = randint(9);
         //printf("%d", number);
         if (number == 2) {
             saved_count = i;
@@ -23,6 +23,8 @@ int rowOperations(int row_count, int row_length) {
 }
 
 int main() {
+    setlocale(LC_ALL, "Rus");
+
     int total_rows, row_length;
 
     printf("Введите количество наборов (число K): ");

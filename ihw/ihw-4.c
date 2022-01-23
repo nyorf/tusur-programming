@@ -3,34 +3,12 @@
 #include <stdbool.h>
 #include <time.h>
 #include <limits.h>
+#include <locale.h>
 
-/*
-int max(int *array, int array_size) {
-    int i, max_number = INT_MIN;
-    for (i = 0; i < array_size; i++) {
-        printf("\n%d", array[i]);
-        if (array[i] > max_number) {
-            max_number = array[i];
-        }
-    }
-    //printf("max_number = %d", max_number);
-    return max_number;
-}
-
-int min(int *array, int array_size) {
-    int i, min_number = INT_MAX;
-    for (i = 0; i < array_size; i++) {
-        printf("\n%d", array[i]);
-        if (array[i] < min_number) {
-            min_number = array[i];
-        }
-    }
-    //printf("min_number = %d", min_number);
-    return min_number;
-}
-*/
 
 int main() {
+    setlocale(LC_ALL, "Rus");
+
     int array_size;
     
     printf("Введите размер массива (значение N): ");

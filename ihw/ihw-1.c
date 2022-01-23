@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <time.h>
+#include <locale.h>
 
 bool isPrime(int n) {
     int i, flag = 0;
@@ -26,15 +27,19 @@ bool isPrime(int n) {
 }
 
 int main() {
+    setlocale(LC_ALL, "Rus");
+
     int array_size;
     printf("Введите количество элементов массива: ");
     scanf("%d", &array_size);
+    printf("\n");
 
     //создание и наполнение массива числами
     int i, numbers[array_size];
     srand(time(0)); //сидируем генератор текущим временем
     for (i = 0; i < array_size; i++) {
         numbers[i] = rand() % (99 + 1 - 2) + 2;
+        printf("numbers[%d] = %d\n", i, numbers[i]);
     }
 
     //проверка каждого элемента массива на простоту + счётчик
@@ -45,7 +50,7 @@ int main() {
         }
     }
 
-    printf("Всего в массиве %d простых чисел.", counter);
+    printf("\nВсего в массиве %d простых чисел.", counter);
 
     return 0;
 }

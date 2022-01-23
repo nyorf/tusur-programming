@@ -4,8 +4,7 @@
 #include <curses.h>
 #include <stdbool.h>
 
-double series(double x, double eps)
-{
+double series(double x, double eps) {
     double ak = x;
     double s = fabs(ak);
     int k = 0;
@@ -19,8 +18,7 @@ double series(double x, double eps)
     return s;
 }
 
-int main()
-{
+int main() {
     double A,B,r,eps;
 
     printf("Печатается таблица функции, заданной рядом Тейлора\n\n");

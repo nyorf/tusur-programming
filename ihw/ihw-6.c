@@ -1,9 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <locale.h>
 #define MAX_SIZE 34
 
 int main() {
+    setlocale(LC_ALL, "Rus");
+
     int array_size, negatives_counter = 0;
     
     printf("Введите размер массива (значение N): ");

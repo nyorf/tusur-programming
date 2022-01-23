@@ -3,29 +3,18 @@
 #include <stdbool.h>
 #include <unistd.h>
 #include <time.h>
+#include <locale.h>
 
 
 int randint(int maxnum) {
     return rand() % (maxnum + 1 - 0) + 0;
 }
 
-
-bool isEven(int num) {
-    if (num % 2 == 0)
-    {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-
-
 int setofnumbers(int row_length) {
     int number, current_summ = 0, saved_summ = 0, zeros_counter = 0;
     bool zeroFound;
     for (int i = 1; i <= row_length; i++) {
-        number = randint(15);
+        number = randint(5);
         printf("\n%d", number);
         if (number == 0 && zeroFound) {
             zeros_counter++;
@@ -52,6 +41,8 @@ int setofnumbers(int row_length) {
 
 
 int main() {
+    setlocale(LC_ALL, "Rus");
+
     int row_length;
     int number;
     int current_summ;

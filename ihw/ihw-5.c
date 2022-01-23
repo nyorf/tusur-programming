@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <time.h>
+#include <locale.h>
 
 
 int previousElementsRelation(int previous, int current) {
@@ -17,6 +18,8 @@ int previousElementsRelation(int previous, int current) {
 }
 
 int main() {
+    setlocale(LC_ALL, "Rus");
+
     int array_size;
     
     printf("Введите размер массива (значение N): ");

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <limits.h>
+#include <locale.h>
 
 int randint(int maxnum) {
     //return rand() % maxnum - maxnum / 2;
@@ -9,6 +10,8 @@ int randint(int maxnum) {
 }
 
 int main() {
+    setlocale(LC_ALL, "Rus");
+
     int m, n;
     printf("Введите размер матрицы (M x N): ");
     printf("\nM = ");
@@ -38,7 +41,7 @@ int main() {
 
             for (int i = 0; i < m; i++) {
                 for (int j = 0; j < n; j++) {
-                    matrix[i][j] = randint(10);
+                    matrix[i][j] = randint(5);
                     printf("%d\t", matrix[i][j]);
                 }
                 printf("\n");
