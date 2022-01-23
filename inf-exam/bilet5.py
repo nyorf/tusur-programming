@@ -1,3 +1,5 @@
+# Написать алгоритм на любом языке программирования для подсчета 0 в числе. 
+
 def count_zeros(number):
     counter = 0
     for i in str(number):

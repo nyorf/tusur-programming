@@ -1,3 +1,5 @@
+# Написать алгоритм на любом языке программирования для поиска минимума в  массиве. 
+
 from math import inf
 from random import randint
 

@@ -1,3 +1,5 @@
+# Написать алгоритм на любом языке программирования для подсчета двоек в числе. 
+
 def count_twos(number):
     counter = 0
     for i in str(number):

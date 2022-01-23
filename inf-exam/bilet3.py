@@ -1,3 +1,5 @@
+# Написать алгоритм на любом языке программирования для подсчета нечетных цифр числа. 
+
 def odddigitcounter(number):
     counter = 0
     for i in str(number):

@@ -1,3 +1,5 @@
+# Написать алгоритм на любом языке программирования для подсчета четных цифр числа. 
+
 def evendigitcounter(number):
     counter = 0
     for i in str(number):
